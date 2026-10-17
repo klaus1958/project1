@@ -4,27 +4,27 @@
 
 {% block content %}
 <article>
-<!-- Artikel-Header mit Titel und Metadaten -->
-<header style="margin-bottom: 4.0rem;">
-<h1 style="margin-bottom: 0.5rem;">{{ page.title }}</h1>
-<div style="font-size: 1.4rem; color: var(--text); font-style: italic;">
-Veröffentlicht am {{ page.date | date(format="%d.%m.%Y") }}
-{% if page.reading_time %}
-• Lesedauer: ca. {{ page.reading_time }} Minuten
-{% endif %}
-</div>
-</header>
+    <!-- Artikel-Header mit Titel und Metadaten -->
+    <header style="margin-bottom: 4.0rem;">
+        <h1 style="margin-bottom: 0.5rem;">{{ page.title }}</h1>
+            <div style="font-size: 1.4rem; color: var(--text); font-style: italic;">
+            Veröffentlicht am {{ page.date | date(format="%d.%m.%Y") }}
+            {% if page.reading_time %}
+            • Lesedauer: ca. {{ page.reading_time }} Minuten
+            {% endif %}
+            </div>
+    </header>
 
-<!-- Der eigentliche Markdown-Inhalt aus deiner Datei -->
-<div class="post-content">
-{{ page.content | safe }}
-</div>
+    <!-- Der eigentliche Markdown-Inhalt aus deiner Datei -->
+    <div class="post-content">
+         {{ page.content | safe }}
+    </div>
 
-<!-- Minimaler Zurück-Button am Ende des Artikels -->
-<footer style="margin-top: 6.0rem; padding-top: 2.0rem; border-top: 0.1rem solid var(--border);">
-<a href="{{ get_url(path='@/blog/_index.md') }}" class="button" style="text-transform: none; font-weight: 300;">
-← Zurück zum Blog
-</a>
-</footer>
+    <!-- Minimaler Zurück-Button am Ende des Artikels -->
+    <footer style="margin-top: 6.0rem; padding-top: 2.0rem; border-top: 0.1rem solid var(--border);">
+        <a href="{{ get_url(path='@/blog/_index.md') }}" class="button" style="text-transform: none; font-weight: 300;">
+        ← Zurück zum Blog
+        </a>
+    </footer>
 </article>
 {% endblock content %}
