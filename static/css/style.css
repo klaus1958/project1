@@ -1,0 +1,47 @@
+:root {
+    --bg-color: #ffffff;
+    --text-color: #111111;
+    --link-color: #0066cc;  
+    --font: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Automatischer, dezenter darkmode */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #121212;
+        --text-color: #e5e5e5;
+        --link-color: #4da6ff;  
+    }
+}
+
+/* 2. das einspaltige perfekt lesbare Layout */
+body {
+    font-family: var(--font);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    max-width: 65ch; /* 65 Zeichen pro Zeile für optimale Lesbarkeit */
+    line-height: 1.7; /* angenehmer Zeilenabstand */
+    margin: 4rem auto; /* zentriert den Inhalt horizontal */
+    padding: 0 1.5rem; /* etwas Innenabstand für kleine Bildschirme */
+    font-size: 1.1rem; /* etwas größere Schriftgröße für bessere Lesbarkeit */
+}
+
+/* 3- Minimale Content-Styles */
+a {
+    color: var(--link-color);
+    text-decoration: none; /* Entfernt Unterstreichung */
+}
+
+a:hover {
+    text-decoration: underline; /* Unterstreichung beim Hover */
+}   
+
+h1, h2, h3 {
+    margin-top: 2rem; /* Abstand vor Überschriften */
+    color: var(--text-color);
+    line-height: 1.2; /* etwas engerer Zeilenabstand für Überschriften */
+    img {
+        max-width: 100%; /* Bilder skalieren, um in den Container zu passen */
+        height: auto; /* Beibehaltung des Seitenverhältnisses */
+    }
+}
