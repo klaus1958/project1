@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}Blog — {{ super() }}{% endblock title %}
+
+{% block content %}
+<section>
+    <h1>Blog-Archiv</h1>
+        <p style="margin-bottom: 4.0rem; font-style: italic;">
+        Gedanken, Notizen und Artikel ordentlich sortiert.
+        </p>
+
+    {% if section.pages %}
+    <ul style="list-style: none; padding-left: 0;">
+    {% for page in section.pages %}
+    <li style="margin-bottom: 2.5rem; border-bottom: 0.1rem dashed var(--border); padding-bottom: 1.5rem;">
+    <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.5rem;">
+    <a href="{{ page.permalink }}" style="font-size: 2.0rem; font-weight: 700;">{{ page.title }}</a>
+    <span style="font-size: 1.3rem; color: var(--text);">
+    {{ page.date | date(format="%d.%m.%Y") }}
+    </span>
+    </div>
+    {% if page.description %}
+    <p style="margin: 0; font-size: 1.5rem; color: var(--text);">{{ page.description }}</p>
+    {% endif %}
+    </li>
+    {% endfor %}
+    </ul>
+    {% else %}
+    <p>Hier gibt es aktuell noch nichts zu lesen.</p>
+    {% endif %}
+</section>
+{% endblock content %}
+
+ 

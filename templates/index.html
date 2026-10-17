@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section>
+    <h1>Willkommen auf meiner Website</h1>
+    <p>
+    Dies ist ein absolut minimalistisches Projekt, gebaut mit <strong>Zola</strong> und einem maßgeschneiderten, hochgradig lesbaren CSS im geliebten Milligram-Stil. Keine unlesbaren Framework-Blackboxes, sondern purer Fokus auf das Wesentliche.
+    </p>
+
+    <!-- Beispiel für den typischen Milligram-Button -->
+    <a href="{{ get_url(path='@/blog/_index.md') }}" class="button">Zum Blog gehen</a>
+</section>
+
+<hr style="border: none; border-top: .1rem solid var(--border); margin: 4.0rem 0;">
+
+<section>
+<h2>Letzte Beiträge</h2>
+<p>Hier kannst du später deine Zola-Beitragsschleife einfügen. Zum Beispiel:</p>
+
+<ul>
+<li><a href="#">Mein erster minimalistischer Beitrag</a> — 16. Oktober 2026</li>
+<li><a href="#">Warum Classless CSS in der Praxis oft scheitert</a> — 15. Oktober 2026</li>
+</ul>
+</section>
+{% endblock content %}
+ 

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{ config.title }}{% endblock %}</title>
+    <link rel="stylesheet" href="{path='css/styles.css' %}">
+
+
+    <link rel="stylesheet" href="{{ get_url(path='css/styles.css', cachebust=true) }}">
+</head>
+<body>
+    <! Minimaler Header>
+    <header style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4rem; border-bottom: 0.1rem solid var(--border); padding: 2rem;">
+        <strong>
+            <a href="{{ get_url(path='') }}" style="color: var(--heading);">
+                {{ config.title }}
+            </a>
+        </strong>
+
+        <nav>
+            <a href="{{ get_url(path='@blog/_index.md') }}" style="margin-left: 2rem;">blog</a>     
+        </nav>
+    </header>
+
+    <! hier wird der inhalt der jeweiligen seite dynamisch eingefügt >
+    <main>
+    {% block content %}{% endblock %}
+    </main>
+</body>
+</html>  
+
+
+
+
+
+        
